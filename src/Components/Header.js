@@ -6,7 +6,6 @@ const Header = ({ data }) => {
     var name = data.name;
     var occupation = data.occupation;
     var description = data.description;
-    var city = data.address.city;
     var networks = data.social.map(function (network) {
       return (
         <li key={network.name}>
@@ -41,17 +40,12 @@ const Header = ({ data }) => {
           </li>
           <li>
             <a className="smoothscroll" href="#resume">
-              Resume
+              Skills
             </a>
           </li>
           <li>
             <a className="smoothscroll" href="#portfolio">
               Works
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#testimonials">
-              Testimonials
             </a>
           </li>
           <li>
@@ -65,13 +59,14 @@ const Header = ({ data }) => {
       <div className="row banner">
         <div className="banner-text">
           <h1 className="responsive-headline">
-            <TypeWriter typing={0.5}>{name ? `I'm ${name}.` : null}</TypeWriter>
+            <TypeWriter typing={0.5}>{name ? `I'm ${name}` : null}</TypeWriter>
           </h1>
           <h3>
-            Based in {city}. <span>{occupation}</span>. {description}.
+           <span>{occupation}</span>. 
           </h3>
           <hr />
-          <ul className="social">{networks}</ul>
+          <ul className="social">{networks}</ul><br/>
+          {description}.
         </div>
       </div>
 
